@@ -1,0 +1,285 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: LumenUniv academic social network API
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: profile
+    description: Academic identity and dashboard
+  - name: feed
+    description: Social feed and interactions
+  - name: explore
+    description: Universities, communities, and global search
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+  /me:
+    get:
+      operationId: getCurrentProfile
+      tags: [profile]
+      summary: Get the current academic profile
+      responses:
+        "200":
+          description: Current profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AcademicProfile"
+  /dashboard:
+    get:
+      operationId: getDashboardSummary
+      tags: [profile]
+      summary: Get dashboard summary and personal activity
+      responses:
+        "200":
+          description: Dashboard summary
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashboardSummary"
+  /feed/posts:
+    get:
+      operationId: listFeedPosts
+      tags: [feed]
+      summary: List posts for the global academic feed
+      parameters:
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 50
+            default: 20
+        - name: cursor
+          in: query
+          required: false
+          schema:
+            type: ["string", "null"]
+      responses:
+        "200":
+          description: Feed posts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Post"
+    post:
+      operationId: createPost
+      tags: [feed]
+      summary: Publish an academic post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PostInput"
+      responses:
+        "201":
+          description: Published post
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Post"
+  /feed/posts/{id}/like:
+    post:
+      operationId: togglePostLike
+      tags: [feed]
+      summary: Toggle the current user's like on a post
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Updated post
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Post"
+  /universities:
+    get:
+      operationId: listUniversities
+      tags: [explore]
+      summary: List featured academic institutions
+      parameters:
+        - name: country
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 20
+            default: 6
+      responses:
+        "200":
+          description: Academic institutions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/University"
+  /communities:
+    get:
+      operationId: listCommunities
+      tags: [explore]
+      summary: List active academic communities
+      responses:
+        "200":
+          description: Academic communities
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Community"
+  /search:
+    get:
+      operationId: searchAcademic
+      tags: [explore]
+      summary: Search the academic network
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - name: type
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [all, people, universities, communities, posts]
+            default: all
+      responses:
+        "200":
+          description: Search results
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/SearchResult"
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+    AcademicProfile:
+      type: object
+      required: [id, name, handle, role, country, university, field, verified]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        handle: { type: string }
+        avatar: { type: string }
+        role: { type: string }
+        country: { type: string }
+        university: { type: string }
+        field: { type: string }
+        verified: { type: boolean }
+        followers: { type: integer }
+        following: { type: integer }
+    DashboardSummary:
+      type: object
+      required: [greeting, unreadNotifications, nextClass, activeCommunities, weeklyProgress]
+      properties:
+        greeting: { type: string }
+        unreadNotifications: { type: integer }
+        nextClass:
+          type: object
+          required: [title, time, room]
+          properties:
+            title: { type: string }
+            time: { type: string }
+            room: { type: string }
+        activeCommunities: { type: integer }
+        weeklyProgress: { type: integer }
+    Post:
+      type: object
+      required: [id, author, body, publishedAt, likes, comments, reposts, liked]
+      properties:
+        id: { type: string }
+        author:
+          $ref: "#/components/schemas/AcademicProfile"
+        body: { type: string }
+        image: { type: ["string", "null"] }
+        topic: { type: ["string", "null"] }
+        publishedAt: { type: string }
+        likes: { type: integer }
+        comments: { type: integer }
+        reposts: { type: integer }
+        liked: { type: boolean }
+        university: { type: string }
+    PostInput:
+      type: object
+      required: [body]
+      properties:
+        body: { type: string, minLength: 1, maxLength: 1000 }
+        topic: { type: ["string", "null"] }
+        image: { type: ["string", "null"] }
+    University:
+      type: object
+      required: [id, name, city, country, region, students, verified, initials, accent]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        city: { type: string }
+        country: { type: string }
+        region: { type: string }
+        students: { type: integer }
+        verified: { type: boolean }
+        initials: { type: string }
+        accent: { type: string }
+    Community:
+      type: object
+      required: [id, name, description, members, university, category, joined]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        description: { type: string }
+        members: { type: integer }
+        university: { type: string }
+        category: { type: string }
+        joined: { type: boolean }
+    SearchResult:
+      type: object
+      required: [id, title, type, subtitle]
+      properties:
+        id: { type: string }
+        title: { type: string }
+        type: { type: string }
+        subtitle: { type: string }
+        image: { type: ["string", "null"] }
+

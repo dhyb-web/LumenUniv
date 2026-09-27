@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "LumenUniv"
+description = "A global academic social network for students, educators, researchers, universities, and academic communities to connect, share knowledge, and discover opportunities."
+version = "1.0.0"
+id = "artifacts/lumenuniv"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18167
+
+[services.development]
+run = "pnpm --filter @workspace/lumenuniv run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/lumenuniv", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/lumenuniv/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18167"
+BASE_PATH = "/"

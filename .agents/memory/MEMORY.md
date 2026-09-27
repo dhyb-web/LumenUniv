@@ -1,0 +1,1 @@
+- [Build environment quirks](build-environment-quirks.md) — generated browser clients and Drizzle helpers follow the installed workspace versions, not every upstream example.

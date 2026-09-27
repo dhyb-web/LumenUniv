@@ -1,0 +1,1172 @@
+# 🎨 LUMENUNIV — DESIGN SYSTEM & UI/UX MASTER PROMPT
+
+Tu es un **Lead Product Designer + Senior UI/UX Designer + Frontend Design Engineer**.
+
+Ta mission est de concevoir l'interface complète de **LumenUniv**, une plateforme mondiale réunissant :
+
+* réseau social académique
+* universités
+* instituts
+* étudiants
+* enseignants
+* chercheurs
+* communautés
+* messagerie
+* vidéos courtes
+* cours
+* bibliothèque
+* événements
+* intelligence artificielle
+
+⚠️ IMPORTANT :
+
+Cette tâche concerne **prioritairement le DESIGN, l'UI et l'UX**.
+
+Ne te concentre pas encore sur la logique métier complexe, les algorithmes ou le backend.
+
+Construis une interface extrêmement réaliste, cohérente, moderne et prête à être connectée à Supabase.
+
+---
+
+# 🌍 IDENTITÉ DE LUMENUNIV
+
+Nom :
+
+**LumenUniv**
+
+Slogan :
+
+**Learn. Connect. Discover.**
+
+Version française :
+
+**Apprendre. Connecter. Découvrir.**
+
+Positionnement :
+
+> Le campus numérique mondial.
+
+LumenUniv doit donner l'impression d'un mélange entre :
+
+* réseau social moderne
+* plateforme universitaire
+* messagerie
+* plateforme vidéo
+* réseau professionnel
+* communauté mondiale
+
+⚠️ Ne copie pas directement WhatsApp, TikTok, Instagram ou LinkedIn.
+
+Utilise uniquement leurs conventions UX générales comme inspiration.
+
+LumenUniv doit avoir sa propre identité.
+
+---
+
+# 🎨 DIRECTION ARTISTIQUE
+
+Style général :
+
+**Premium + Academic + Social + Futuristic + Human**
+
+Éviter :
+
+* design hacker
+* cyberpunk agressif
+* interfaces trop techniques
+* trop de néons
+* interfaces surchargées
+* gros gradients partout
+* animations excessives
+
+L'objectif est de créer une plateforme qui pourrait être utilisée quotidiennement par une université internationale.
+
+---
+
+# 🌌 PALETTE
+
+Créer un système de couleurs cohérent.
+
+Couleurs principales :
+
+```text
+Midnight      #0B1020
+Deep Navy     #11182D
+Lumen Blue    #4F7CFF
+Lumen Violet  #7C5CFF
+Cyan Glow     #22D3EE
+White         #FFFFFF
+Soft Gray     #F5F7FB
+```
+
+Utiliser les couleurs avec modération.
+
+Créer des variables CSS :
+
+```text
+--background
+--surface
+--surface-hover
+--primary
+--secondary
+--accent
+--text
+--text-muted
+--border
+--success
+--warning
+--danger
+```
+
+Ne pas coder les couleurs directement dans chaque composant.
+
+---
+
+# 🌙 THÈMES
+
+Créer au minimum :
+
+## DARK
+
+Style :
+
+* fond midnight
+* cartes légèrement plus claires
+* bordures discrètes
+* texte blanc
+* texte secondaire gris bleuté
+* accents bleu/violet
+
+## LIGHT
+
+Style :
+
+* fond très clair
+* cartes blanches
+* ombres légères
+* texte sombre
+* accents bleu/violet
+
+## MIDNIGHT
+
+Version plus immersive :
+
+* fond presque noir
+* surfaces profondes
+* accents lumineux subtils
+
+L'utilisateur doit pouvoir changer de thème depuis Settings.
+
+---
+
+# 🔤 TYPOGRAPHIE
+
+Utiliser une typographie moderne et très lisible.
+
+Préférer :
+
+**Inter**
+
+ou une police équivalente.
+
+Hiérarchie :
+
+```text
+Display
+H1
+H2
+H3
+Body
+Small
+Caption
+```
+
+Les textes doivent être très lisibles sur mobile.
+
+---
+
+# 🧩 DESIGN SYSTEM
+
+Créer un véritable design system.
+
+Composants :
+
+* Button
+* IconButton
+* Input
+* SearchBar
+* Avatar
+* Badge
+* Card
+* Modal
+* Drawer
+* Dropdown
+* Tabs
+* Tooltip
+* Toast
+* Skeleton
+* Progress
+* Switch
+* Checkbox
+* Radio
+* Select
+* Pagination
+* Carousel
+* VideoCard
+* PostCard
+* UserCard
+* UniversityCard
+* CourseCard
+* MessageBubble
+* NotificationItem
+
+Tous les composants doivent être cohérents.
+
+Utiliser :
+
+**shadcn/ui + Tailwind CSS + Lucide Icons**
+
+---
+
+# 🖥️ DESKTOP LAYOUT
+
+Créer une structure principale :
+
+```text
+┌─────────────────────────────────────────────────────────────┐
+│                       TOP NAVBAR                            │
+├───────────────┬───────────────────────────────┬─────────────┤
+│               │                               │             │
+│   SIDEBAR     │          MAIN CONTENT         │   RIGHT     │
+│               │                               │   PANEL     │
+│               │                               │             │
+│               │                               │             │
+└───────────────┴───────────────────────────────┴─────────────┘
+```
+
+La sidebar doit pouvoir :
+
+* rester ouverte
+* être réduite
+* devenir drawer sur mobile
+
+---
+
+# 🔝 TOP NAVBAR
+
+Créer :
+
+```text
+Logo LumenUniv
+
+🔎 Rechercher
+
+🌍 Explore
+
+🔔 Notifications
+
+💬 Messages
+
+Avatar utilisateur
+```
+
+La navbar doit rester élégante et légère.
+
+---
+
+# 🧭 SIDEBAR
+
+Créer :
+
+```text
+🔆 LumenUniv
+
+🏠 Accueil
+🌎 Explorer
+🎬 Shorts
+💬 Messages
+🏫 Campus
+📚 Cours
+📖 Bibliothèque
+👥 Communautés
+📅 Événements
+🤖 Lumen AI
+
+──────────────
+
+⭐ Favoris
+📌 Enregistrés
+
+──────────────
+
+⚙️ Paramètres
+```
+
+Ajouter un profil utilisateur en bas.
+
+---
+
+# 🏠 PAGE HOME
+
+La Home est la page la plus importante.
+
+Elle doit avoir trois zones :
+
+### GAUCHE
+
+Navigation.
+
+### CENTRE
+
+Feed principal.
+
+### DROITE
+
+Informations personnalisées.
+
+---
+
+## FEED
+
+Créer :
+
+### Stories / moments
+
+Une ligne horizontale :
+
+```text
++ Votre story
+👤 Ama
+👤 Koffi
+👤 Sarah
+👤 John
+👤 Marie
+```
+
+Design circulaire avec bordure lumineuse discrète.
+
+---
+
+## CREATE POST
+
+Créer une carte :
+
+```text
+👤 Votre profil
+
+Quoi de neuf sur votre campus ?
+
+[📷 Photo]
+[🎥 Vidéo]
+[📄 Document]
+[📊 Sondage]
+
+                         Publier
+```
+
+---
+
+# 📝 POST CARD
+
+Design :
+
+```text
+┌───────────────────────────────────────┐
+│ 👤 Nom utilisateur                   │
+│ 🎓 Université • Il y a 2 h           │
+│                                       │
+│ Texte du post...                     │
+│                                       │
+│        [ IMAGE / MEDIA ]              │
+│                                       │
+│ ❤️ 1.2K   💬 84   🔁 32   🔖          │
+└───────────────────────────────────────┘
+```
+
+Créer des interactions au hover.
+
+---
+
+# 🎥 SHORTS
+
+Créer une expérience vidéo verticale immersive.
+
+Sur desktop :
+
+```text
+┌────────────────────────────────────────────┐
+│                 SHORTS                     │
+│                                            │
+│             ┌─────────────┐                │
+│             │             │ ❤️             │
+│             │             │ 💬             │
+│             │   VIDEO     │ 🔁             │
+│             │             │ 🔖             │
+│             │             │                │
+│             └─────────────┘                │
+│                                            │
+│ @username                                  │
+│ 🎓 University                              │
+│ Description...                             │
+│                                            │
+│ #math #campus #student                     │
+└────────────────────────────────────────────┘
+```
+
+Utiliser :
+
+* scroll vertical
+* snap scrolling
+* lecture automatique
+* contrôles discrets
+
+---
+
+# 💬 MESSAGERIE
+
+Créer une interface de chat premium.
+
+Desktop :
+
+```text
+┌─────────────────┬──────────────────────────────┐
+│ Conversations   │ Conversation                 │
+│                 │                              │
+│ 🔎 Recherche    │ 👤 Koffi                     │
+│                 │ 🟢 En ligne                  │
+│ 👤 Koffi        │                              │
+│ 👤 Ama          │ Bonjour !                    │
+│ 👥 Groupe L2    │                              │
+│ 🏫 Maths        │       Salut 👋               │
+│                 │                              │
+│                 │                              │
+│                 │ 📎  😊  Message...      ➤   │
+└─────────────────┴──────────────────────────────┘
+```
+
+Créer des bulles élégantes.
+
+---
+
+# 🌎 EXPLORE
+
+Créer une page dédiée à la découverte mondiale.
+
+Header :
+
+```text
+Explore LumenUniv
+Découvrez le monde académique.
+```
+
+Ajouter :
+
+```text
+🔎 Rechercher
+
+[ Pays ]
+[ Universités ]
+[ Instituts ]
+[ Étudiants ]
+[ Enseignants ]
+[ Communautés ]
+```
+
+---
+
+# 🌍 WORLD VIEW
+
+Créer une section avec une carte stylisée du monde.
+
+Ne pas forcément intégrer une vraie carte au départ.
+
+Créer une visualisation UI élégante avec :
+
+```text
+🌍 Afrique
+🌍 Europe
+🌍 Amérique
+🌍 Asie
+🌍 Océanie
+```
+
+Cliquer sur un continent affiche les pays.
+
+---
+
+# 🏫 UNIVERSITY CARDS
+
+Créer des cartes :
+
+```text
+┌──────────────────────────┐
+│      COVER IMAGE         │
+│                          │
+│       🏫 LOGO            │
+│                          │
+│ Université de Kara       │
+│ 🇹🇬 Togo                 │
+│ ✓ Vérifiée               │
+│                          │
+│ 24K étudiants            │
+│                          │
+│ [Voir]       [Suivre]    │
+└──────────────────────────┘
+```
+
+Les cartes doivent être visuellement premium.
+
+---
+
+# 🏫 UNIVERSITY PROFILE
+
+Créer un header spectaculaire :
+
+```text
+┌──────────────────────────────────────────┐
+│             COVER                        │
+│                                          │
+│        🏫 LOGO                           │
+│                                          │
+│ Université de Kara ✓                     │
+│ 🇹🇬 Togo                                 │
+│                                          │
+│ 24K étudiants • 18 facultés              │
+│                                          │
+│ [Suivre] [Communauté]                    │
+└──────────────────────────────────────────┘
+```
+
+Tabs :
+
+```text
+Accueil
+Posts
+Étudiants
+Cours
+Événements
+Communautés
+À propos
+```
+
+---
+
+# 📚 COURSES
+
+Créer des cartes de cours :
+
+```text
+┌───────────────────────────────┐
+│ 📐 Analyse mathématique       │
+│ LFM • Semestre 1              │
+│                               │
+│ 👨‍🏫 Dr. Professeur            │
+│                               │
+│ ███████████░░░ 72%            │
+│                               │
+│ 12 chapitres                  │
+│ 4 devoirs                     │
+│                               │
+│ [Continuer]                   │
+└───────────────────────────────┘
+```
+
+Utiliser une progression visuelle.
+
+---
+
+# 📖 LIBRARY
+
+Créer une interface proche d'une bibliothèque numérique premium.
+
+Catégories :
+
+```text
+📚 Livres
+📄 Cours
+📝 TD
+🧪 TP
+🎓 Mémoires
+📜 Thèses
+📋 Annales
+```
+
+Créer recherche + filtres.
+
+---
+
+# 👥 COMMUNITIES
+
+Créer une interface de communautés.
+
+Exemple :
+
+```text
+┌────────────────────────────┐
+│ 🧮 Mathématiques L2        │
+│                            │
+│ 2.4K membres               │
+│ Université de Kara         │
+│                            │
+│ Discussions • Documents    │
+│                            │
+│ [Rejoindre]                │
+└────────────────────────────┘
+```
+
+---
+
+# 📅 EVENTS
+
+Créer une page événementielle.
+
+Cartes :
+
+```text
+┌─────────────────────────────┐
+│ 🎓 CONFÉRENCE               │
+│                             │
+│ Intelligence artificielle   │
+│ dans l'éducation            │
+│                             │
+│ 📅 12 Octobre               │
+│ 🕐 14:00                    │
+│ 📍 Université de Kara       │
+│                             │
+│ [Participer]                │
+└─────────────────────────────┘
+```
+
+---
+
+# 🤖 LUMEN AI
+
+Créer une interface AI extrêmement propre.
+
+Header :
+
+```text
+✨ Lumen AI
+Votre assistant académique
+```
+
+Suggestions :
+
+```text
+📚 Résumer un cours
+
+🧠 Créer une fiche de révision
+
+❓ Générer un quiz
+
+🧮 Expliquer un exercice
+
+📅 Organiser mes révisions
+```
+
+Chat en dessous.
+
+Créer une expérience proche des meilleures interfaces conversationnelles modernes, mais avec identité LumenUniv.
+
+---
+
+# 👤 PROFIL
+
+Créer un profil social + académique.
+
+Header :
+
+```text
+┌──────────────────────────────────────┐
+│             COVER                    │
+│                                      │
+│       👤 AVATAR                      │
+│                                      │
+│ Yaovi Dolama                         │
+│ 🎓 Étudiant en Mathématiques         │
+│ 🏫 Université                        │
+│ 🇹🇬 Togo                             │
+│                                      │
+│ [Modifier]                           │
+└──────────────────────────────────────┘
+```
+
+Tabs :
+
+```text
+Posts
+Shorts
+Cours
+Communautés
+Documents
+À propos
+```
+
+---
+
+# 🔔 NOTIFICATIONS
+
+Créer un panneau moderne :
+
+```text
+🔔 Notifications
+
+Aujourd'hui
+
+❤️ Koffi a aimé votre publication
+
+💬 Ama a commenté votre post
+
+🎓 Nouveau devoir en Analyse
+
+📢 Votre université a publié une annonce
+
+────────────
+
+Hier
+
+👥 Vous avez été ajouté à Mathématiques L2
+```
+
+---
+
+# ⚙️ SETTINGS
+
+Créer une interface Settings moderne avec catégories :
+
+```text
+Compte
+Profil
+Notifications
+Confidentialité
+Sécurité
+Apparence
+Langue
+Accessibilité
+Données
+```
+
+---
+
+# 📱 MOBILE UX
+
+Ne jamais simplement réduire le desktop.
+
+Créer une véritable expérience mobile.
+
+Bottom navigation :
+
+```text
+🏠       🌎       ＋       💬       👤
+Home   Explore   Create   Chat   Profile
+```
+
+Le bouton `+` doit être visuellement central.
+
+---
+
+# ➕ CREATE MENU
+
+Lorsque l'utilisateur appuie sur + :
+
+```text
+Créer
+
+📝 Publication
+🎥 Short
+📷 Photo
+📊 Sondage
+📅 Événement
+📄 Document
+```
+
+Utiliser un bottom sheet mobile.
+
+---
+
+# 🎬 MICRO-INTERACTIONS
+
+Ajouter des animations légères :
+
+* like
+* follow
+* ouverture modal
+* changement de page
+* hover
+* notifications
+* upload
+* skeleton loading
+
+Exemple :
+
+Le bouton Like doit avoir une petite animation.
+
+Mais éviter les animations permanentes.
+
+---
+
+# ⏳ LOADING STATES
+
+Chaque page doit avoir ses propres skeletons.
+
+Exemple :
+
+```text
+██████████████
+████████
+████████████████████
+```
+
+Ne jamais afficher une page vide pendant le chargement.
+
+---
+
+# 📭 EMPTY STATES
+
+Créer des états élégants.
+
+Exemple :
+
+```text
+        📚
+
+Aucun cours trouvé
+
+Essayez de modifier votre recherche.
+
+[Explorer les cours]
+```
+
+---
+
+# ❌ ERROR STATES
+
+Créer :
+
+```text
+Une erreur est survenue.
+
+Impossible de charger cette page.
+
+[Réessayer]
+```
+
+---
+
+# ♿ ACCESSIBILITÉ
+
+Respecter :
+
+* contraste
+* navigation clavier
+* labels
+* aria
+* tailles de texte
+* focus states
+* reduced motion
+
+Prévoir un mode :
+
+**Réduire les animations**
+
+---
+
+# 📐 RESPONSIVE BREAKPOINTS
+
+Créer au minimum :
+
+```text
+Mobile
+Tablet
+Laptop
+Desktop
+Large Desktop
+```
+
+Tester :
+
+```text
+375px
+768px
+1024px
+1440px
+1920px
+```
+
+---
+
+# 🧭 NAVIGATION UX
+
+Toutes les pages doivent être accessibles.
+
+Aucun bouton visuel ne doit être décoratif sans raison.
+
+Tous les liens doivent avoir un comportement cohérent.
+
+Prévoir des transitions entre les pages.
+
+---
+
+# 🖼️ MÉDIAS
+
+Utiliser des images de démonstration réalistes.
+
+Éviter les images génériques répétées.
+
+Pour les profils :
+
+* avatars variés
+
+Pour les universités :
+
+* campus
+* bibliothèques
+* amphithéâtres
+* étudiants
+
+Pour les Shorts :
+
+* vidéos verticales de démonstration
+
+Les données DEMO doivent être clairement identifiées.
+
+---
+
+# 🧪 PROTOTYPAGE
+
+Créer suffisamment de données fictives pour que chaque interface paraisse vivante.
+
+Le Home doit contenir :
+
+* posts
+* vidéos
+* commentaires
+* utilisateurs
+* universités
+* événements
+
+Le Chat doit contenir :
+
+* conversations
+* messages
+* groupes
+
+Explore doit contenir :
+
+* pays
+* universités
+* instituts
+
+---
+
+# 🖥️ PAGES À CONSTRUIRE
+
+Créer les interfaces suivantes :
+
+```text
+/
+ /login
+ /register
+ /home
+ /explore
+ /shorts
+ /messages
+ /campus
+ /universities
+ /university/:id
+ /courses
+ /course/:id
+ /library
+ /communities
+ /community/:id
+ /events
+ /ai
+ /profile/:username
+ /settings
+ /notifications
+ /admin
+```
+
+---
+
+# 🎯 PRIORITÉ UX
+
+L'utilisateur doit comprendre LumenUniv en moins de quelques secondes.
+
+Il doit immédiatement savoir :
+
+1. où il est
+2. ce qu'il peut faire
+3. ce qui se passe dans son université
+4. ce qui se passe dans son réseau
+5. comment découvrir d'autres universités
+6. comment communiquer
+7. comment apprendre
+
+---
+
+# 🧠 DESIGN PHILOSOPHY
+
+LumenUniv doit donner cette sensation :
+
+> « Je suis sur un réseau social, mais tout ce que je vois est connecté à ma vie académique. »
+
+Le contenu social doit être vivant.
+
+L'université doit être présente partout sans devenir envahissante.
+
+Le design doit fonctionner aussi bien pour :
+
+* un étudiant
+* un professeur
+* un chercheur
+* une université
+* un institut
+* une association
+
+---
+
+# 🚨 RÈGLES IMPORTANTES
+
+NE PAS :
+
+* copier l'interface exacte de TikTok
+* copier WhatsApp
+* copier Instagram
+* copier LinkedIn
+* utiliser des logos appartenant à ces plateformes
+* créer une interface uniquement desktop
+* créer une interface statique sans interactions
+* mettre tous les composants dans un seul fichier
+* utiliser des couleurs aléatoires
+* multiplier les gradients
+* surcharger l'écran
+
+DOIT :
+
+* être original
+* être premium
+* être responsive
+* être accessible
+* être cohérent
+* être rapide visuellement
+* être agréable sur mobile
+* utiliser un vrai design system
+* utiliser des composants réutilisables
+* prévoir les états loading/empty/error
+* prévoir dark/light
+* prévoir l'internationalisation
+
+---
+
+# 🚀 ORDRE DE CONSTRUCTION
+
+Construire l'UI dans cet ordre :
+
+### PHASE 1
+
+Design System
+
+### PHASE 2
+
+Navbar + Sidebar + Mobile Navigation
+
+### PHASE 3
+
+Home / Feed
+
+### PHASE 4
+
+Shorts
+
+### PHASE 5
+
+Chat
+
+### PHASE 6
+
+Explore + Monde
+
+### PHASE 7
+
+Universités
+
+### PHASE 8
+
+Cours + Library
+
+### PHASE 9
+
+Communautés
+
+### PHASE 10
+
+Events
+
+### PHASE 11
+
+Lumen AI
+
+### PHASE 12
+
+Profil
+
+### PHASE 13
+
+Notifications
+
+### PHASE 14
+
+Settings
+
+### PHASE 15
+
+Admin UI
+
+### PHASE 16
+
+Responsive + Accessibilité
+
+### PHASE 17
+
+Polish final
+
+---
+
+# 🏆 OBJECTIF FINAL
+
+Quand je lance l'application, je veux avoir l'impression d'utiliser une **véritable plateforme technologique mondiale**, et non un template généré automatiquement.
+
+Le résultat doit être :
+
+**LumenUniv**
+
+🌍 Global
+🎓 Academic
+💬 Social
+🎬 Video
+📚 Educational
+🤖 Intelligent
+✨ Premium
+
+Construis d'abord l'expérience visuelle et UX complète avec des données DEMO réalistes.
+
+Chaque écran doit être fonctionnel côté interface :
+
+* navigation
+* boutons
+* modales
+* menus
+* onglets
+* filtres
+* recherche
+* likes
+* commentaires
+* création
+* chat
+* vidéos
+* profils
+
+Prépare le code pour que les données puissent ensuite être remplacées par **Supabase** sans devoir refaire le design.
+
+Avant de terminer, vérifie toutes les pages sur desktop et mobile et corrige les problèmes de responsive, overflow, alignement, typographie et cohérence visuelle.
