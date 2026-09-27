@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
@@ -27,6 +27,7 @@
   --color-sidebar-foreground: hsl(var(--sidebar-foreground));
   --color-sidebar-border: hsl(var(--sidebar-border));
   --font-sans: var(--app-font-sans);
+  --font-display: var(--app-font-display);
   --font-mono: var(--app-font-mono);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -35,69 +36,70 @@
 }
 
 :root {
-  --background: 220 33% 97%;
-  --foreground: 226 42% 12%;
-  --surface: 0 0% 100%;
-  --surface-hover: 220 35% 94%;
-  --border: 220 22% 88%;
-  --card: 0 0% 100%;
-  --card-foreground: 226 42% 12%;
-  --primary: 225 100% 65%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 247 100% 68%;
-  --secondary-foreground: 0 0% 100%;
-  --muted: 220 27% 94%;
-  --muted-foreground: 222 16% 45%;
-  --accent: 188 80% 54%;
-  --accent-foreground: 225 48% 14%;
-  --destructive: 0 72% 56%;
-  --destructive-foreground: 0 0% 100%;
-  --input: 220 22% 83%;
-  --ring: 225 100% 65%;
-  --sidebar: 225 47% 8%;
-  --sidebar-foreground: 220 32% 94%;
-  --sidebar-border: 225 29% 18%;
-  --app-font-sans: 'Inter', sans-serif;
+  --background: 228 42% 96%;
+  --foreground: 231 39% 13%;
+  --surface: 225 35% 98%;
+  --surface-hover: 230 37% 93%;
+  --border: 229 25% 87%;
+  --card: 225 40% 99%;
+  --card-foreground: 231 39% 13%;
+  --primary: 246 58% 48%;
+  --primary-foreground: 225 40% 99%;
+  --secondary: 232 51% 30%;
+  --secondary-foreground: 225 40% 99%;
+  --muted: 230 35% 92%;
+  --muted-foreground: 230 18% 45%;
+  --accent: 188 72% 45%;
+  --accent-foreground: 231 45% 11%;
+  --destructive: 0 66% 48%;
+  --destructive-foreground: 225 40% 99%;
+  --input: 229 25% 81%;
+  --ring: 188 72% 45%;
+  --sidebar: 232 44% 12%;
+  --sidebar-foreground: 225 35% 94%;
+  --sidebar-border: 232 28% 23%;
+  --app-font-sans: 'Plus Jakarta Sans', sans-serif;
+  --app-font-display: 'Space Grotesk', sans-serif;
   --app-font-mono: 'DM Mono', monospace;
-  --radius: 0.85rem;
-  --shadow-sm: 0 1px 2px hsl(225 38% 10% / .05), 0 8px 24px hsl(225 38% 10% / .04);
-  --shadow-md: 0 12px 34px hsl(225 38% 10% / .09);
+  --radius: 1rem;
+  --shadow-sm: 0 1px 2px hsl(231 39% 13% / .04), 0 10px 28px hsl(232 44% 12% / .05);
+  --shadow-md: 0 16px 42px hsl(232 44% 12% / .11);
 }
 
 .dark {
-  --background: 225 47% 8%;
-  --foreground: 220 32% 94%;
-  --surface: 225 39% 12%;
-  --surface-hover: 225 34% 17%;
-  --border: 225 29% 22%;
-  --card: 225 39% 12%;
-  --card-foreground: 220 32% 94%;
-  --primary: 225 100% 65%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 247 100% 68%;
-  --secondary-foreground: 0 0% 100%;
-  --muted: 225 32% 17%;
-  --muted-foreground: 222 18% 67%;
-  --accent: 188 80% 54%;
-  --accent-foreground: 225 48% 10%;
-  --destructive: 0 70% 64%;
-  --destructive-foreground: 0 0% 100%;
-  --input: 225 29% 27%;
-  --ring: 225 100% 65%;
-  --sidebar: 225 49% 6%;
-  --sidebar-foreground: 220 32% 94%;
-  --sidebar-border: 225 29% 16%;
+  --background: 232 44% 12%;
+  --foreground: 225 35% 94%;
+  --surface: 232 40% 15%;
+  --surface-hover: 232 34% 20%;
+  --border: 232 28% 24%;
+  --card: 232 40% 15%;
+  --card-foreground: 225 35% 94%;
+  --primary: 246 70% 72%;
+  --primary-foreground: 232 44% 12%;
+  --secondary: 188 72% 45%;
+  --secondary-foreground: 232 44% 12%;
+  --muted: 232 32% 21%;
+  --muted-foreground: 229 18% 69%;
+  --accent: 188 72% 55%;
+  --accent-foreground: 232 44% 12%;
+  --destructive: 0 65% 64%;
+  --destructive-foreground: 232 44% 12%;
+  --input: 232 28% 29%;
+  --ring: 188 72% 55%;
+  --sidebar: 232 48% 7%;
+  --sidebar-foreground: 225 35% 94%;
+  --sidebar-border: 232 28% 17%;
 }
 
 .midnight {
-  --background: 225 48% 4%;
-  --card: 225 43% 8%;
-  --surface: 225 43% 8%;
-  --surface-hover: 225 35% 13%;
+  --background: 232 48% 6%;
+  --card: 232 43% 10%;
+  --surface: 232 43% 10%;
+  --surface-hover: 232 35% 15%;
   --foreground: 220 32% 96%;
-  --border: 225 30% 16%;
-  --muted: 225 32% 12%;
-  --sidebar: 225 54% 3%;
+  --border: 232 30% 19%;
+  --muted: 232 32% 14%;
+  --sidebar: 232 54% 4%;
 }
 
 @layer base {
